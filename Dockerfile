@@ -17,5 +17,7 @@ RUN npm install -g npm@8.1.3
 RUN npm install -g pm2
 RUN npm update
 COPY . .
-RUN npm start
+RUN pm2 start helga.js
+RUN pm2 start main.js
+RUN pm2 save
 CMD ["pm2-runtime", "main.js"]`
